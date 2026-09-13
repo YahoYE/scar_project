@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void codePrint(const float l[], int size, string name)
+void codePrint(const float l[], const int size, const string name)
 {
     cout << name << endl;
     for (int i = 0; i < size; i++)

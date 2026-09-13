@@ -14,7 +14,7 @@ double GetPower(double base, int exponent)
 
 void DemoGetPower(double base, int exponent)
 {
-    cout << base << " ^ " << exponent << " = " << GetPower(base, exponent);
+    cout << base << " ^ " << exponent << " = " << GetPower(base, exponent) << endl;
 }
 
 void task1()
@@ -22,4 +22,8 @@ void task1()
     cout << 2.0 << " ^ " << 5 << " = " << GetPower(2.0, 5) << endl;
     cout << 3.0 << " ^ " << 4 << " = " << GetPower(3.0, 4) << endl;
     cout << -2.0 << " ^ " << 5 << " = " << GetPower(-2.0, 5) << endl;
+    cout << "Part 2" << endl;
+    DemoGetPower(2.0, 5);
+    DemoGetPower(3.0, 4);
+    DemoGetPower(-2.0, 5);
 }

@@ -6,7 +6,7 @@ using namespace std;
 void codePrint(const int l[], int size, string name)
 {
     cout << name << endl;
-    for (int i = 0; i <= size; i++)
+    for (int i = 0; i < size; i++)
     {
         cout << l[i] << " ";
     }
@@ -14,10 +14,10 @@ void codePrint(const int l[], int size, string name)
 
 void lsort(int l[])
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 9; i++)
     {
         bool swaper = false;
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 9; j++)
         {
             if (l[j] > l[j + 1])
             {

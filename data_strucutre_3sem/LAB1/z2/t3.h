@@ -9,9 +9,9 @@ void task3()
     for (int i = 0; i < 8; i++)
     {
         cout << "a[" << i << "]: ";
-        cin >> a[i];
-        char ch;
-        while (cin.get(ch) && ch != '\n');
+        string s;
+        cin >> s;
+        a[i] = s[0];
     }
 
     cout << "Your array is: " << endl;
