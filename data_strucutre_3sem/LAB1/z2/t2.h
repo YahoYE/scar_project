@@ -23,7 +23,7 @@ int count(const float l[], const float searchingValue)
     return counter;
 }
 
-void task2()
+void task1()
 {
     float l[12] = {12.0, 21.5, 119.2, -80.7, 300.0, 75.5, 81.2, 8.1, 47.3, 31.2, 85.3, 100.1};
     codePrint(l, 12, "Source array is:"); cout << endl;

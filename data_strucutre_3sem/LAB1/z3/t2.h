@@ -11,7 +11,7 @@ void RoundToTens(int& value) {
     }
 }
 
-void task2() {
+void task1() {
     int a = 204; cout << "For " << a << " rounded value is "; RoundToTens(a); cout << a << endl;
     int b = 205; cout << "For " << b << " rounded value is "; RoundToTens(b); cout << b << endl;
     int c = 206; cout << "For " << c << " rounded value is "; RoundToTens(c); cout << c << endl;
