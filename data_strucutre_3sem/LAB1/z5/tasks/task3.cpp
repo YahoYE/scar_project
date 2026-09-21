@@ -12,7 +12,7 @@ void task3() {
         cout << "Enter a[" << i << "]: "; cin >> arr[i];
     }
 
-    cout << "\nYour char array is:\n";
+    cout << "Your char array is:\n";
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }

@@ -12,6 +12,7 @@ add_executable(z4
         tasks/task4.cpp
         tasks/task5.cpp
         tasks/task6.cpp
+        tasks/task7.cpp
 )
 
 # Чтобы в z4.cpp можно было писать #include "tasks.h" без префиксов

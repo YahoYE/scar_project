@@ -13,4 +13,6 @@ int main()
     cout << "======== Task 4 ========" << endl; task4(); cout << endl;
     cout << "======== Task 5 ========" << endl; task5(); cout << endl;
     cout << "======== Task 6 ========" << endl; task6(); cout << endl;
+    cout << "======== Task 7 ========" << endl; task7(); cout << endl;
+    return 0;
 }
