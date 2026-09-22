@@ -1,12 +1,12 @@
-#include <iostream>
 #include "tasks.h"
+#include <iostream>
 
 using namespace std;
 
 void task6()
 {
     int a = 5;
-    int* pointer = &a;
+    int *pointer = &a;
 
     cout << "Address of a: " << &a << endl;
     cout << "Address in pointer: " << pointer << endl;

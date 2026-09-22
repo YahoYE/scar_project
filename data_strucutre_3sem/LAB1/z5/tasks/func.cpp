@@ -4,7 +4,7 @@
 using namespace std;
 
 template <typename T>
-void codePrint(const T arr[], int size, const string& name)
+void printArr(const T arr[], int size, const string& name)
 {
     cout << name << endl;
     for (int i = 0; i < size; i++)

@@ -8,7 +8,7 @@ void task3();
 void task4();
 
 template <typename T>
-void codePrint(const T arr[], int size, const std::string& name)
+void printArr(const T arr[], int size, const std::string& name)
 {
     std::cout << name << std::endl;
     for (int i = 0; i < size; i++)

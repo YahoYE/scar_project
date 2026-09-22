@@ -1,9 +1,9 @@
-#include <iostream>
 #include "tasks.h"
+#include <iostream>
 
 using namespace std;
 
-void Foo(double* a)
+void foo(double *a)
 {
     cout << "Address in pointer: " << a << endl;
     cout << "Address of pointer: " << &a << endl;
@@ -16,14 +16,14 @@ void Foo(double* a)
 void task7()
 {
     double value = 5.0;
-    double* pointer = &value;
+    double *pointer = &value;
     cout << "Address of value in main(): " << &value << endl;
     cout << "Address in pointer in main(): " << pointer << endl;
     cout << "Address of pointer in main(): " << &pointer << endl;
     cout << "Value of a in main(): " << value << endl;
     cout << endl;
 
-    Foo(pointer);
+    foo(pointer);
 
     cout << endl;
     cout << "Value of a in main(): " << value << endl;

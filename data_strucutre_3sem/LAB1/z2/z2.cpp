@@ -1,8 +1,6 @@
+#include "tasks/tasks.h"
 #include <iostream>
 #include <windows.h>
-#include "t1.h"
-#include "t2.h"
-#include "t3.h"
 using namespace std;
 
 int main()

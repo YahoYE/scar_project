@@ -1,9 +1,9 @@
-#include <iostream>
 #include "tasks.h"
+#include <iostream>
 
 using namespace std;
 
-void Foo(double& a)
+void foo(double &a)
 {
     cout << "Address of a in Foo(): " << &a << endl;
     cout << "Value of a in Foo(): " << a << endl;
@@ -19,7 +19,7 @@ void task5()
     cout << "Value of a in main(): " << a << endl;
     cout << endl;
 
-    Foo(a);
+    foo(a);
 
     cout << endl;
     cout << "Value of a in main(): " << a << endl;
