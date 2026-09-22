@@ -31,4 +31,5 @@ void task4()
 {
     double *arr = new double[10]{1.0, 15.0, -8.2, -3.5, 12.6, 38.4, -0.5, 4.5, 16.7, 4.5};
     printArr(arr, 10, "Array of double:");
+    delete arr;
 }
