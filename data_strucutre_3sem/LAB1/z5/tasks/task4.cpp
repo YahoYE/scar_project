@@ -2,19 +2,21 @@
 
 using namespace std;
 
-void sorter(double arr[], int size)
+//TODO: naming
+void Sorter(double array[], const int &size)
 {
-    for (int i = 0; i < 9; i++)
+    //TODO: size?
+    for (int i = 0; i < size - 1; i++)
     {
         bool swaper = false;
 
-        for (int j = 0; j < 9; j++)
+        for (int j = 0; j < size - 1; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (array[j] > array[j + 1])
             {
-                int inttemp = arr[j + 1];
-                arr[j + 1] = arr[j];
-                arr[j] = inttemp;
+                int inttemp = array[j + 1];
+                array[j + 1] = array[j];
+                array[j] = inttemp;
                 swaper = true;
             }
         }
@@ -24,12 +26,15 @@ void sorter(double arr[], int size)
             break;
         }
     }
-    printArr(arr, size, "Array:");
+    PrintArray(array, size, "Array:");
 }
 
 void task4()
 {
-    double *arr = new double[10]{1.0, 15.0, -8.2, -3.5, 12.6, 38.4, -0.5, 4.5, 16.7, 4.5};
-    printArr(arr, 10, "Array of double:");
-    delete arr;
+    //TODO: naming, string length, to const
+    const int size = 10;
+    double *array = new double[10]
+    {1.0, 15.0, -8.2, -3.5, 12.6, 38.4, -0.5, 4.5, 16.7, 4.5};
+    PrintArray(array, size, "Array of double:");
+    delete array;
 }

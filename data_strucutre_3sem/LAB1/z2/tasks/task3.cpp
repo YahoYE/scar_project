@@ -5,26 +5,35 @@ using namespace std;
 
 void task3()
 {
-    char a[8];
+    const int size = 8;
+//TODO: naming
+
+    char array[size];
     cout << "Enter array of 8 chars" << endl;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < size; i++)
     {
         cout << "a[" << i << "]: ";
-        string s;
-        cin >> s;
-        a[i] = s[0];
+//TODO: naming
+
+        string tempString;
+        cin >> tempString;
+        array[i] = tempString[0];
     }
 
     cout << "Your array is: " << endl;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < size; i++)
     {
-        cout << a[i] << " ";
+        cout << array[i] << " ";
     }
 
     cout << "\nAll letters in your array:\n";
-    for (int i = 0; i < 8; ++i) {
-        if (a[i] >= 'a' && a[i] <= 'z') {
-            cout << a[i] << " ";
+//TODO: {}
+
+    for (int i = 0; i < size; ++i)
+    {
+        if (array[i] >= 'a' && array[i] <= 'z')
+        {
+            cout << array[i] << " ";
         }
     }
     cout << endl;

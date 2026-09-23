@@ -9,7 +9,9 @@ void Breakpoints()
     double sum = 0.0;
     for (int i = 0; i < 1000; i++)
     {
+        //TODO:
         sum += add * i; // Поставьте условную точку останова здесь
+
         if (i % 3 ==  0)
         {
             add *= 1.1;

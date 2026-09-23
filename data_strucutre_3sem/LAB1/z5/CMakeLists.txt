@@ -13,5 +13,6 @@ add_executable(z5
         tasks/task5.cpp
         tasks/task6.cpp
         tasks/task7.cpp
+        tasks/task8.cpp
 )
 target_include_directories(z5 PRIVATE tasks)

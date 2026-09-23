@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void foo(double a)
+void Foo(double a)
 {
     cout << "Address of a in Foo(): " << &a << endl;
     cout << "Value of a in Foo(): " << a << endl;
@@ -18,7 +18,7 @@ void task4()
     cout << "Value of a in main(): " << a << endl;
     cout << endl;
 
-    foo(a);
+    Foo(a);
 
     cout << endl;
     cout << "Value of a in main(): " << a << endl;

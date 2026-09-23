@@ -4,39 +4,45 @@
 
 using namespace std;
 
-void codePrint(const int l[], int size, string name)
+//TODO: naming
+void CodePrint(const int array[], int size, const string name)
 {
     cout << name << endl;
     for (int i = 0; i < size; i++)
     {
-        cout << l[i] << " ";
+        cout << array[i] << " ";
     }
 }
 
-void lsort(int l[])
+//TODO: naming
+
+void SortArray(int array[], const int &size)
 {
-    for (int i = 0; i < 9; i++)
+    //TODO: size?
+    for (int i = 0; i < size - 1; i++)
     {
         bool swaper = false;
-        for (int j = 0; j < 9; j++)
+        for (int j = 0; j < size - 1; j++)
         {
-            if (l[j] > l[j + 1])
+            if (array[j] > array[j + 1])
             {
-                int inttemp = l[j + 1];
-                l[j+1] = l[j];
-                l[j] = inttemp;
+                int inttemp = array[j + 1];
+                array[j+1] = array[j];
+                array[j] = inttemp;
                 swaper = true;
             }
         }
         if (!swaper) {break;}
     }
-    codePrint(l, 10, "Sorted array is:");
+    CodePrint(array, size, "Sorted array is:");
 }
 
 void task1()
 {
-    int l[10] = {12, 21, 119, -80, 300, 75, 81, -8, 47, 31};
-    codePrint(l, 10, "Source array is:");
+    const int size = 10;
+    //TODO: naming
+    int array[size] = {12, 21, 119, -80, 300, 75, 81, -8, 47, 31};
+    CodePrint(array, size, "Source array is:");
     cout << endl;
-    lsort(l);
+    SortArray(array, size);
 }

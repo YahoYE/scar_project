@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void foo(double *a)
+void Foo(double *a)
 {
     cout << "Address in pointer: " << a << endl;
     cout << "Address of pointer: " << &a << endl;
@@ -23,7 +23,7 @@ void task7()
     cout << "Value of a in main(): " << value << endl;
     cout << endl;
 
-    foo(pointer);
+    Foo(pointer);
 
     cout << endl;
     cout << "Value of a in main(): " << value << endl;

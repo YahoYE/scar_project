@@ -2,15 +2,15 @@
 #include <iostream>
 using namespace std;
 
-int countLetters(const char arr[], int size)
+int CountLetters(const char array[], const int &size)
 {
     int count = 0;
     cout << "Letters in array:" << endl;
     for (int i = 0; i < size; i++)
     {
-        if (arr[i] >= 'a' && arr[i] <= 'z')
+        if (array[i] >= 'a' && array[i] <= 'z')
         {
-            cout << arr[i] << " ";
+            cout << array[i] << " ";
             count++;
         }
     }
@@ -20,12 +20,15 @@ int countLetters(const char arr[], int size)
 
 void task6()
 {
-    char* arr = new char[15] {
-        'a', '5', 'm', 'i', '%', '!', 's', 'p', '*', '9', 'f', '^', ';', 'q', 'k'
+    const int size = 15;
+    char* arr = new char[size]
+    {
+        'a', '5', 'm', 'i', '%', '!', 's',
+        'p', '*', '9', 'f', '^', ';', 'q', 'k'
     };
 
-    printArr(arr, 15, "Char array is:");
-    int letterCount = countLetters(arr, 15);
+    PrintArray(arr, size, "Char array is:");
+    int letterCount = CountLetters(arr, size);
 
     cout << "Count of letters: " << letterCount << endl;
 
