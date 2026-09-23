@@ -11,7 +11,7 @@ int* MakeRandomArray(int arraySize)
 
     for (int i = 0; i < arraySize; i++)
     {
-        arr[i] = rand() % 101; // Диапазон [0; 100] включительно
+        arr[i] = rand() % 101;
     }
 
     return arr;
@@ -20,7 +20,6 @@ int* MakeRandomArray(int arraySize)
 void task7()
 {
     srand(time(nullptr));
-
 
     const int size1 = 5;
     int* arr1 = MakeRandomArray(size1);
