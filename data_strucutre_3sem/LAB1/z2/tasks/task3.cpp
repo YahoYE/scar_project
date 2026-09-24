@@ -6,14 +6,12 @@ using namespace std;
 void task3()
 {
     const int size = 8;
-//TODO: naming
 
     char array[size];
     cout << "Enter array of 8 chars" << endl;
     for (int i = 0; i < size; i++)
     {
         cout << "a[" << i << "]: ";
-//TODO: naming
 
         string tempString;
         cin >> tempString;
@@ -27,7 +25,6 @@ void task3()
     }
 
     cout << "\nAll letters in your array:\n";
-//TODO: {}
 
     for (int i = 0; i < size; ++i)
     {

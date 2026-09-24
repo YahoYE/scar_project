@@ -2,13 +2,12 @@
 
 using namespace std;
 
-//TODO: naming
 void Sorter(double array[], const int &size)
 {
-    //TODO: size?
     for (int i = 0; i < size - 1; i++)
     {
-        bool swaper = false;
+        //TODO: naming
+        bool isswaping = false;
 
         for (int j = 0; j < size - 1; j++)
         {
@@ -17,11 +16,11 @@ void Sorter(double array[], const int &size)
                 int inttemp = array[j + 1];
                 array[j + 1] = array[j];
                 array[j] = inttemp;
-                swaper = true;
+                isswaping = true;
             }
         }
 
-        if (!swaper)
+        if (!isswaping)
         {
             break;
         }
@@ -31,10 +30,11 @@ void Sorter(double array[], const int &size)
 
 void task4()
 {
-    //TODO: naming, string length, to const
     const int size = 10;
     double *array = new double[10]
-    {1.0, 15.0, -8.2, -3.5, 12.6, 38.4, -0.5, 4.5, 16.7, 4.5};
+    {
+        1.0, 15.0, -8.2, -3.5, 12.6, 38.4, -0.5, 4.5, 16.7, 4.5
+    };
     PrintArray(array, size, "Array of double:");
     delete array;
 }

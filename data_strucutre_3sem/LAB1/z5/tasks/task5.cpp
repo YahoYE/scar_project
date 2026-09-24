@@ -16,19 +16,25 @@ int FindIndex(const int arr[], int size, int value)
 
 void task5()
 {
-    int* arr = new int[10] {1, 15, -8, -3, 12, 38, 0, 4, 16, 4};
+    const int size = 10;
 
-    PrintArray(arr, 10, "Int array:");
+        //TODO: string length
+    //TODO: to const
+    int* arr = new int[size]
+    {
+        1, 15, -8, -3, 12, 38, 0, 4, 16, 4
+    };
+
+    PrintArray(arr, size, "Int array:");
 
     int searchValue;
     cout << "Enter searching value: ";
     cin >> searchValue;
 
-    int index = FindIndex(arr, 10, searchValue);
+    int index = FindIndex(arr, size, searchValue);
 
     if (index != -1)
     {
-        //TODO: string length
         cout << "Index of searching value ";
         cout << searchValue << " is: " << index << endl;
     }

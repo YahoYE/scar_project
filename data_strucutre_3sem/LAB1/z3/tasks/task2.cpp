@@ -3,13 +3,14 @@
 
 using namespace std;
 
-//TODO: {}
 void RoundToTens(int& value)
 {
-    if (value % 10 < 5) {
+    if (value % 10 < 5)
+    {
         value = value / 10 * 10;
     }
-    if (value % 10 >= 5) {
+    if (value % 10 >= 5)
+    {
         value = value / 10 * 10 + 10;
     }
 }

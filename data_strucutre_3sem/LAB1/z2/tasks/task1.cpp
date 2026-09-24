@@ -4,7 +4,6 @@
 
 using namespace std;
 
-//TODO: naming
 void CodePrint(const int array[], int size, const string name)
 {
     cout << name << endl;
@@ -14,14 +13,13 @@ void CodePrint(const int array[], int size, const string name)
     }
 }
 
-//TODO: naming
 
 void SortArray(int array[], const int &size)
 {
-    //TODO: size?
     for (int i = 0; i < size - 1; i++)
     {
-        bool swaper = false;
+        //TODO: naming
+        bool isswaping = false;
         for (int j = 0; j < size - 1; j++)
         {
             if (array[j] > array[j + 1])
@@ -29,10 +27,10 @@ void SortArray(int array[], const int &size)
                 int inttemp = array[j + 1];
                 array[j+1] = array[j];
                 array[j] = inttemp;
-                swaper = true;
+                isswaping = true;
             }
         }
-        if (!swaper) {break;}
+        if (!isswaping) {break;}
     }
     CodePrint(array, size, "Sorted array is:");
 }
@@ -40,7 +38,6 @@ void SortArray(int array[], const int &size)
 void task1()
 {
     const int size = 10;
-    //TODO: naming
     int array[size] = {12, 21, 119, -80, 300, 75, 81, -8, 47, 31};
     CodePrint(array, size, "Source array is:");
     cout << endl;

@@ -5,11 +5,11 @@ using namespace std;
 
 void task3()
 {
-    //TODO: to const
     int size;
     cout << "Enter char array size: ";
     cin >> size;
 
+    //TODO: naming
     char *arr = new char[size];
     for (int i = 0; i < size; i++)
     {

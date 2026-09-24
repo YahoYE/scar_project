@@ -5,10 +5,7 @@ using namespace std;
 
 void task2()
 {
-    //TODO: to const
     const int size = 8;
-    //TODO: naming
-    //TODO: string length
 
     bool *array = new bool[size]
     {
