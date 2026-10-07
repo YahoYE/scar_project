@@ -18,20 +18,19 @@ void task5()
 {
     const int size = 10;
 
-        //TODO: string length
-    //TODO: to const
-    int* arr = new int[size]
+    //TODO: naming
+    int* array = new int[size]
     {
         1, 15, -8, -3, 12, 38, 0, 4, 16, 4
     };
 
-    PrintArray(arr, size, "Int array:");
+    PrintArray(array, size, "Int array:");
 
     int searchValue;
     cout << "Enter searching value: ";
     cin >> searchValue;
 
-    int index = FindIndex(arr, size, searchValue);
+    int index = FindIndex(array, size, searchValue);
 
     if (index != -1)
     {
@@ -43,5 +42,5 @@ void task5()
         cout << "Value " << searchValue << " not found in array" << endl;
     }
 
-    delete[] arr;
+    delete[] array;
 }

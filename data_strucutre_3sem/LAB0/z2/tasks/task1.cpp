@@ -19,7 +19,7 @@ void SortArray(int array[], const int &size)
     for (int i = 0; i < size - 1; i++)
     {
         //TODO: naming
-        bool isswaping = false;
+        bool isSwaping = false;
         for (int j = 0; j < size - 1; j++)
         {
             if (array[j] > array[j + 1])
@@ -27,10 +27,10 @@ void SortArray(int array[], const int &size)
                 int inttemp = array[j + 1];
                 array[j+1] = array[j];
                 array[j] = inttemp;
-                isswaping = true;
+                isSwaping = true;
             }
         }
-        if (!isswaping) {break;}
+        if (!isSwaping) {break;}
     }
     CodePrint(array, size, "Sorted array is:");
 }

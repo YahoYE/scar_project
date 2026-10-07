@@ -29,15 +29,14 @@ int CountPositiveValues(int* values, int count)
 void task8()
 {
     //TODO: to const
-    // Тут нельзя конст тк переменная изменяется 
-    int count = 15;
-    int* values = ReadArray(count);
-    cout << "Count is: " << CountPositiveValues(values, count) << endl;
-    delete [] values;  /* утечка данных была тут
+    const int count1 = 15;
+    int* values = ReadArray(count1);
+    cout << "Count is: " << CountPositiveValues(values, count1) << endl;
+    delete[] values;  /* утечка данных была тут
     тк не было удаление первого значения */
 
-    count = 20;
-    values = ReadArray(count);
-    cout << "Count is: " << CountPositiveValues(values, count) << endl;
+    const int count2 = 20;
+    values = ReadArray(count2);
+    cout << "Count is: " << CountPositiveValues(values, count2) << endl;
     delete[] values;
 }

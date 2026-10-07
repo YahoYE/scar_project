@@ -10,17 +10,17 @@ void task3()
     cin >> size;
 
     //TODO: naming
-    char *arr = new char[size];
+    char *array = new char[size];
     for (int i = 0; i < size; i++)
     {
         cout << "Enter a[" << i << "]: ";
-        cin >> arr[i];
+        cin >> array[i];
     }
 
     cout << "Your char array is:\n";
     for (int i = 0; i < size; i++)
     {
-        cout << arr[i] << " ";
+        cout << array[i] << " ";
     }
-    delete[] arr;
+    delete[] array;
 }

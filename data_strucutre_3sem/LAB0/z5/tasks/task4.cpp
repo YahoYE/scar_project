@@ -7,7 +7,7 @@ void Sorter(double array[], const int &size)
     for (int i = 0; i < size - 1; i++)
     {
         //TODO: naming
-        bool isswaping = false;
+        bool isSwaping = false;
 
         for (int j = 0; j < size - 1; j++)
         {
@@ -16,11 +16,11 @@ void Sorter(double array[], const int &size)
                 int inttemp = array[j + 1];
                 array[j + 1] = array[j];
                 array[j] = inttemp;
-                isswaping = true;
+                isSwaping = true;
             }
         }
 
-        if (!isswaping)
+        if (!isSwaping)
         {
             break;
         }
