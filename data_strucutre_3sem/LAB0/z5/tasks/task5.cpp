@@ -2,11 +2,11 @@
 #include <iostream>
 using namespace std;
 
-int FindIndex(const int arr[], int size, int value)
+int FindIndex(const int array[], int size, int value)
 {
     for (int i = 0; i < size; i++)
     {
-        if (arr[i] == value)
+        if (array[i] == value)
         {
             return i;
         }
@@ -18,7 +18,6 @@ void task5()
 {
     const int size = 10;
 
-    //TODO: naming
     int* array = new int[size]
     {
         1, 15, -8, -3, 12, 38, 0, 4, 16, 4

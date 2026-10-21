@@ -110,7 +110,11 @@ bool DynamicArray::RemoveByIndex(int index)
     }
     _size--;
 
-    if (_size > 0 && (_capacity / _size >= _growthFactor) && (_capacity / _growthFactor >= 4))
+    if (
+        _size > 0
+        && (_capacity / _size >= _growthFactor)
+        && (_capacity / _growthFactor >= 4)
+        )
     {
         Reallocate(_capacity / _growthFactor);
     }

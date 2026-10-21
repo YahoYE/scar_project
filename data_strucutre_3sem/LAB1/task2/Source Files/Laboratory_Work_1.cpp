@@ -146,7 +146,10 @@ int main()
             }
             case 7:
             {
-                int value = ReadInteger("Enter value to search (Linear): ");
+                int value = ReadInteger
+                (
+                    "Enter value to search (Linear): "
+                    );
                 int index = array.LinearSearch(value);
                 if (index != -1)
                 {
@@ -160,8 +163,10 @@ int main()
             }
             case 8:
             {
-                cout << "Note: Binary search requires sorted array." << endl;
-                int value = ReadInteger("Enter value to search (Binary): ");
+                cout << "Note: Binary search"
+                        " requires sorted array." << endl;
+                int value = ReadInteger("Enter value"
+                                        " to search (Binary): ");
                 int index = array.BinarySearch(value);
                 if (index != -1)
                 {
@@ -180,7 +185,8 @@ int main()
             }
             default:
             {
-                cout << "Unknown command. Try entering the command again" << endl;
+                cout << "Unknown command. Try "
+                        "entering the command again" << endl;
                 break;
             }
         }

@@ -3,17 +3,16 @@
 
 using namespace std;
 
-//TODO: naming
-void PrintArray(const float array[], const int size, const string temPlate)
+
+void PrintArray(const float array[], const int size, const string arrayName)
 {
-    cout << temPlate << endl;
+    cout << arrayName << endl;
     for (int i = 0; i < size; i++)
     {
         cout << array[i] << " ";
     }
 }
 
-//TODO: naming
 int CountGreaterOrEqual(const float array[], const float searchingValue)
 {
     int counter = 0;
@@ -30,7 +29,6 @@ int CountGreaterOrEqual(const float array[], const float searchingValue)
 void task2()
 {
     const int size = 12;
-    //TODO: naming
     float array[size] = {12.0, 21.5, 119.2, -80.7, 300.0, 75.5,
         81.2, 8.1, 47.3, 31.2, 85.3, 100.1};
     PrintArray(array, size, "Source array is:");

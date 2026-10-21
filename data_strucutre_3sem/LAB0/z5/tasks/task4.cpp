@@ -6,7 +6,6 @@ void Sorter(double array[], const int &size)
 {
     for (int i = 0; i < size - 1; i++)
     {
-        //TODO: naming
         bool isSwaping = false;
 
         for (int j = 0; j < size - 1; j++)

@@ -9,7 +9,6 @@ void task3()
     cout << "Enter char array size: ";
     cin >> size;
 
-    //TODO: naming
     char *array = new char[size];
     for (int i = 0; i < size; i++)
     {

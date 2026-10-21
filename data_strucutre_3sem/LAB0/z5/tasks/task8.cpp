@@ -28,7 +28,6 @@ int CountPositiveValues(int* values, int count)
 
 void task8()
 {
-    //TODO: to const
     const int count1 = 15;
     int* values = ReadArray(count1);
     cout << "Count is: " << CountPositiveValues(values, count1) << endl;
