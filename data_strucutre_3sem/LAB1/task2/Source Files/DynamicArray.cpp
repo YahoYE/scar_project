@@ -1,5 +1,5 @@
 #include "DynamicArray.h"
-#include <algorithm>
+#include <utility>
 
 DynamicArray::DynamicArray()
 {
@@ -14,10 +14,17 @@ DynamicArray::~DynamicArray()
     _array = nullptr;
 }
 
-int DynamicArray::GetSize() const { return _size; }
-int DynamicArray::GetCapacity() const { return _capacity; }
+int DynamicArray::GetSize() const
+{
+    return _size;
+}
 
-int* DynamicArray::GetArray()
+int DynamicArray::GetCapacity() const
+{
+    return _capacity;
+}
+
+int* DynamicArray::GetArray() const
 {
     return _array;
 }
@@ -30,12 +37,14 @@ int DynamicArray::GetElement(int index) const
 void DynamicArray::Reallocate(int newCapacity)
 {
     if (newCapacity < 4)
+    {
         newCapacity = 4;
+    }
 
     int* newArray = new int[newCapacity];
     int count = (_size < newCapacity) ? _size : newCapacity;
 
-    for (int i = 0; i < count; ++i)
+    for (int i = 0; i < count; i++)
     {
         newArray[i] = _array[i];
     }
@@ -47,12 +56,17 @@ void DynamicArray::Reallocate(int newCapacity)
 
 void DynamicArray::AddElement(int index, int value)
 {
+    if (index < 0 || index > _size)
+    {
+        return;
+    }
+
     if (_size >= _capacity)
     {
         Reallocate(_capacity * _growthFactor);
     }
 
-    for (int i = _size; i > index; --i)
+    for (int i = _size; i > index; i--)
     {
         _array[i] = _array[i - 1];
     }
@@ -73,19 +87,24 @@ void DynamicArray::InsertAtEnd(int value)
 
 bool DynamicArray::InsertAfterValue(int targetValue, int valueToInsert)
 {
-    int idx = LinearSearch(targetValue);
-    if (idx == -1) return false;
+    int index = LinearSearch(targetValue);
+    if (index == -1)
+    {
+        return false;
+    }
 
-    AddElement(idx + 1, valueToInsert);
+    AddElement(index + 1, valueToInsert);
     return true;
 }
 
 bool DynamicArray::RemoveByIndex(int index)
 {
     if (index < 0 || index >= _size)
+    {
         return false;
+    }
 
-    for (int i = index; i < _size - 1; ++i)
+    for (int i = index; i < _size - 1; i++)
     {
         _array[i] = _array[i + 1];
     }
@@ -101,16 +120,23 @@ bool DynamicArray::RemoveByIndex(int index)
 
 bool DynamicArray::RemoveByValue(int value)
 {
-    int idx = LinearSearch(value);
-    if (idx == -1) return false;
-    return RemoveByIndex(idx);
+    int index = LinearSearch(value);
+    if (index == -1)
+    {
+        return false;
+    }
+
+    return RemoveByIndex(index);
 }
 
 int DynamicArray::LinearSearch(int value) const
 {
-    for (int i = 0; i < _size; ++i)
+    for (int i = 0; i < _size; i++)
     {
-        if (_array[i] == value) return i;
+        if (_array[i] == value)
+        {
+            return i;
+        }
     }
     return -1;
 }
@@ -125,19 +151,28 @@ int DynamicArray::BinarySearch(int value) const
         int mid = left + (right - left) / 2;
 
         if (_array[mid] == value)
+        {
             return mid;
+        }
 
         if (_array[mid] < value)
+        {
             left = mid + 1;
+        }
         else
+        {
             right = mid - 1;
+        }
     }
     return -1;
 }
 
 void DynamicArray::QuickSortInternal(int left, int right)
 {
-    if (left >= right) return;
+    if (left >= right)
+    {
+        return;
+    }
 
     int pivot = _array[left + (right - left) / 2];
     int i = left;
@@ -145,8 +180,14 @@ void DynamicArray::QuickSortInternal(int left, int right)
 
     while (i <= j)
     {
-        while (_array[i] < pivot) i++;
-        while (_array[j] > pivot) j--;
+        while (_array[i] < pivot)
+        {
+            i++;
+        }
+        while (_array[j] > pivot)
+        {
+            j--;
+        }
 
         if (i <= j)
         {
@@ -156,8 +197,14 @@ void DynamicArray::QuickSortInternal(int left, int right)
         }
     }
 
-    if (left < j) QuickSortInternal(left, j);
-    if (i < right) QuickSortInternal(i, right);
+    if (left < j)
+    {
+        QuickSortInternal(left, j);
+    }
+    if (i < right)
+    {
+        QuickSortInternal(i, right);
+    }
 }
 
 void DynamicArray::SortArray()

@@ -1,137 +1,190 @@
+#include "DynamicArray.h"
 #include <iostream>
 #include <limits>
-#include "DynamicArray.h"
+#include <string>
 
 using namespace std;
 
-int ReadInt()
+void PrintArray(const DynamicArray& array, const string& message)
 {
-    int value;
+    cout << message << endl;
+    int size = array.GetSize();
+    if (size == 0)
+    {
+        cout << "(empty)" << endl;
+        return;
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << array.GetElement(i);
+        if (i < size - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+}
+
+int ReadInteger(const string& prompt)
+{
+    int value = 0;
     while (true)
     {
+        cout << prompt;
         if (cin >> value)
         {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return value;
         }
-        cout << "Unknown command. Try entering the command again: ";
+        cout << "Unknown command. Try entering the command again" << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 }
 
-void PrintArray(const DynamicArray& arr)
+void ShowMenu()
 {
-    cout << "\nCurrent array:\n";
-    if (arr.GetSize() == 0)
-    {
-        cout << "[Empty array]";
-    }
-    else
-    {
-        for (int i = 0; i < arr.GetSize(); ++i)
-        {
-            cout << arr.GetElement(i);
-            if (i < arr.GetSize() - 1) cout << ", ";
-        }
-    }
-    cout << "\n(Size: " << arr.GetSize() << ", Capacity: " << arr.GetCapacity() << ")\n";
+    cout << "\nSelect the action you want to do:" << endl;
+    cout << "1. Remove an element by index from an array" << endl;
+    cout << "2. Remove an element by value from an array" << endl;
+    cout << "3. Insert an element at the beginning" << endl;
+    cout << "4. Insert an element at the end" << endl;
+    cout << "5. Insert after a certain element" << endl;
+    cout << "6. Sort array" << endl;
+    cout << "7. Linear search for an element in an array" << endl;
+    cout << "8. Binary search for an element in an array" << endl;
+    cout << "0. Exit" << endl;
 }
 
 int main()
 {
-    DynamicArray arr;
+    DynamicArray array;
 
-    // Начальные тестовые данные из методички
-    arr.InsertAtEnd(12);
-    arr.InsertAtEnd(3);
-    arr.InsertAtEnd(8);
-    arr.InsertAtEnd(25);
+    // Начальные элементы согласно демонстрации в методичке
+    array.InsertAtEnd(12);
+    array.InsertAtEnd(3);
+    array.InsertAtEnd(8);
+    array.InsertAtEnd(25);
 
-    while (true)
+    cout << "Laboratory Work #1 Dynamic Array" << endl;
+
+    bool isRunning = true;
+    while (isRunning)
     {
-        cout << "\n--------------------------------------------\n"
-                  << "Laboratory Work #1 Dynamic Array\n";
-        PrintArray(arr);
-        cout << "\nSelect the action you want to do:\n"
-                  << "1. Remove an element by index from an array\n"
-                  << "2. Remove an element by value from an array\n"
-                  << "3. Insert an element at the beginning\n"
-                  << "4. Insert an element at the end\n"
-                  << "5. Insert after a certain element\n"
-                  << "6. Sort array (Quick Sort)\n"
-                  << "7. Linear search for an element in an array\n"
-                  << "8. Binary search for an element in an array\n"
-                  << "0. Exit\n"
-                  << "Your input: ";
+        cout << "\nCurrent array:" << endl;
+        PrintArray(array, "");
+        ShowMenu();
 
-        int choice = ReadInt();
-
-        if (choice == 0) break;
+        int choice = ReadInteger("Your input: ");
 
         switch (choice)
         {
             case 1:
             {
-                cout << "Enter index: ";
-                int idx = ReadInt();
-                if (!arr.RemoveByIndex(idx))
-                    cout << "Error: Invalid index!\n";
+                if (array.GetSize() == 0)
+                {
+                    cout << "Array is empty." << endl;
+                    break;
+                }
+                int index = ReadInteger("Enter index to remove: ");
+                if (!array.RemoveByIndex(index))
+                {
+                    cout << "Index out of range." << endl;
+                }
+                else
+                {
+                    cout << "Element removed." << endl;
+                }
                 break;
             }
             case 2:
             {
-                cout << "Enter value: ";
-                int val = ReadInt();
-                if (!arr.RemoveByValue(val))
-                    cout << "Error: Value not found!\n";
+                if (array.GetSize() == 0)
+                {
+                    cout << "Array is empty." << endl;
+                    break;
+                }
+                int value = ReadInteger("Enter value to remove: ");
+                if (!array.RemoveByValue(value))
+                {
+                    cout << "Value not found." << endl;
+                }
+                else
+                {
+                    cout << "Element removed." << endl;
+                }
                 break;
             }
             case 3:
             {
-                cout << "Enter value: ";
-                arr.InsertAtBeginning(ReadInt());
+                int value = ReadInteger("Enter value to insert at beginning: ");
+                array.InsertAtBeginning(value);
                 break;
             }
             case 4:
             {
-                cout << "Enter value: ";
-                arr.InsertAtEnd(ReadInt());
+                int value = ReadInteger("Enter value to insert at end: ");
+                array.InsertAtEnd(value);
                 break;
             }
             case 5:
             {
-                cout << "Target element: ";
-                int target = ReadInt();
-                cout << "New element: ";
-                int val = ReadInt();
-                if (!arr.InsertAfterValue(target, val))
-                    cout << "Error: Target not found!\n";
+                int target = ReadInteger("Enter target value to insert after: ");
+                int value = ReadInteger("Enter value to insert: ");
+                if (!array.InsertAfterValue(target, value))
+                {
+                    cout << "Target element not found." << endl;
+                }
                 break;
             }
             case 6:
-                arr.SortArray();
-                cout << "Sorted.\n";
+            {
+                array.SortArray();
+                cout << "Array sorted using Quick Sort." << endl;
                 break;
+            }
             case 7:
             {
-                cout << "Enter value to search: ";
-                int val = ReadInt();
-                int idx = arr.LinearSearch(val);
-                cout << (idx != -1 ? "Found at index: " + to_string(idx) : "Not found") << "\n";
+                int value = ReadInteger("Enter value to search (Linear): ");
+                int index = array.LinearSearch(value);
+                if (index != -1)
+                {
+                    cout << "Element found at index: " << index << endl;
+                }
+                else
+                {
+                    cout << "Element not found." << endl;
+                }
                 break;
             }
             case 8:
             {
-                cout << "Enter value to search: ";
-                int val = ReadInt();
-                int idx = arr.BinarySearch(val);
-                cout << (idx != -1 ? "Found at index: " + to_string(idx) : "Not found (ensure array is sorted)") << "\n";
+                cout << "Note: Binary search requires sorted array." << endl;
+                int value = ReadInteger("Enter value to search (Binary): ");
+                int index = array.BinarySearch(value);
+                if (index != -1)
+                {
+                    cout << "Element found at index: " << index << endl;
+                }
+                else
+                {
+                    cout << "Element not found." << endl;
+                }
+                break;
+            }
+            case 0:
+            {
+                isRunning = false;
                 break;
             }
             default:
-                cout << "Unknown command. Try entering the command again\n";
+            {
+                cout << "Unknown command. Try entering the command again" << endl;
                 break;
+            }
         }
     }
+
     return 0;
 }
