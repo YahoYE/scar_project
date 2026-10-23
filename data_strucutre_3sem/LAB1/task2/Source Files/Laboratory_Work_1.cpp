@@ -59,6 +59,7 @@ void ShowMenu()
 
 int main()
 {
+    //TODO: to pointer
     DynamicArray array;
 
     // Начальные элементы согласно демонстрации в методичке
@@ -146,11 +147,9 @@ int main()
             }
             case 7:
             {
-                int value = ReadInteger
-                (
-                    "Enter value to search (Linear): "
-                    );
+                int value = ReadInteger("Enter value to search (Linear): ");
                 int index = array.LinearSearch(value);
+                //TODO: duplication
                 if (index != -1)
                 {
                     cout << "Element found at index: " << index << endl;
@@ -168,6 +167,8 @@ int main()
                 int value = ReadInteger("Enter value"
                                         " to search (Binary): ");
                 int index = array.BinarySearch(value);
+                //TODO: duplication
+
                 if (index != -1)
                 {
                     cout << "Element found at index: " << index << endl;

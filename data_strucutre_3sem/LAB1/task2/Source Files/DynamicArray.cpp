@@ -36,6 +36,7 @@ int DynamicArray::GetElement(int index) const
 
 void DynamicArray::Reallocate(int newCapacity)
 {
+    //TODO: to const
     if (newCapacity < 4)
     {
         newCapacity = 4;
@@ -113,6 +114,7 @@ bool DynamicArray::RemoveByIndex(int index)
     if (
         _size > 0
         && (_capacity / _size >= _growthFactor)
+        //TODO: to const
         && (_capacity / _growthFactor >= 4)
         )
     {
