@@ -14,6 +14,9 @@ private:
     //! \brief Коэффициент масштабирования массива.
     const int _growthFactor = 2;
 
+    //! \brief Минимальная вместимость буфера массива.
+    const int _minCapacity = 4;
+
     //! \brief Указатель на выделенную динамическую память.
     int* _array;
 
